@@ -3,7 +3,7 @@ Contributors: Tips and Tricks HQ, wptipsntricks
 Donate link: http://www.tipsandtricks-hq.com/
 Tags: woocommerce, login, member, members, membership, payment, e-commerce, wp members, membership payment
 Requires at least: 3.8
-Tested up to: 4.1
+Tested up to: 4.2
 Stable tag: 1.2
 License: GPLv2 or later
 
