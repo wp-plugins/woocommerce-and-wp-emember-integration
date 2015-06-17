@@ -4,7 +4,7 @@ Donate link: http://www.tipsandtricks-hq.com/
 Tags: woocommerce, login, member, members, membership, payment, e-commerce, wp members, membership payment
 Requires at least: 3.8
 Tested up to: 4.2
-Stable tag: 1.2
+Stable tag: 1.3
 License: GPLv2 or later
 
 An addon to integrate WooCommerce plugin with WP eMember plugin for membership payment
@@ -34,6 +34,10 @@ http://www.tipsandtricks-hq.com/wordpress-emember-easy-to-use-wordpress-membersh
 
 == Changelog ==
 
+= 1.3 =
+* WooCommerce subscription addon compatibility
+= 1.2 =
+* WordPress 4.1 compatibility
 = 1.1 =
 * First commit to wordpress.org
 

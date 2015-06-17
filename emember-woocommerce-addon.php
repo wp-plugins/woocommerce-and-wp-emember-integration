@@ -4,7 +4,7 @@
  * Plugin Name: eMember WooCommerce Addon
  * Plugin URI: http://www.tipsandtricks-hq.com/wordpress-emember-easy-to-use-wordpress-membership-plugin-1706
  * Description: eMember Addon that allows you to accept membership payment via WooCommerce
- * Version: 1.2
+ * Version: 1.3
  * Author: Tips and Tricks HQ
  * Author URI: http://www.tipsandtricks-hq.com/
  * Requires at least: 3.0
@@ -82,3 +82,18 @@ function emember_woo_handle_woocommerce_payment($order_id) {
     }
 }
 
+/**************************************************/
+/*** WooCommerce Subscription Addon Integration ***/
+//Reference - http://docs.woothemes.com/document/subscriptions/develop/action-reference/
+add_action('subscriptions_cancelled_for_order', 'emember_woo_deactivate_account');
+add_action('subscriptions_expired_for_order', 'emember_woo_deactivate_account');
+
+function emember_woo_deactivate_account($order)
+{
+    $order_id = $order->id;
+    eMember_log_debug("Woo Subscription cancelled/expired. Order ID: ".$order_id, true);
+    $ipn_data = array();
+    $ipn_data['parent_txn_id'] = $order_id;
+    include_once(WP_EMEMBER_PATH . 'ipn/eMember_handle_subsc_ipn_stand_alone.php');
+    eMember_handle_subsc_cancel_stand_alone($ipn_data);
+}
